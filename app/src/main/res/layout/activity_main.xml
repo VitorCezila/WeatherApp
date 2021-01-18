@@ -22,6 +22,14 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:queryHint="City,Country">
+
+            </SearchView>
+
             <TextView
                 android:id="@+id/adress"
                 android:layout_width="wrap_content"
