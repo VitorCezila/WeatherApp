@@ -7,4 +7,8 @@
 
 # Features
 
-Obtain temperature, pressure, humidity and wind speed
+Obtain in real time:
+• Temperature
+• Pressure
+• Humidity
+• Wind speed
