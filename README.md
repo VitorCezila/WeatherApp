@@ -8,7 +8,11 @@
 # Features
 
 Obtain in real time:
+
 • Temperature
+
 • Pressure
+
 • Humidity
+
 • Wind speed
