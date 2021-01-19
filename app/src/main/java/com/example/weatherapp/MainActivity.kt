@@ -1,13 +1,12 @@
 package com.example.weatherapp
 
+import android.graphics.BitmapFactory
+import android.media.Image
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
-import android.widget.SearchView
-import android.widget.TextView
+import android.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
 import java.lang.Exception
@@ -20,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     val CITY: String = "são paulo,br"
     val API: String = "7c721ab3de8e74a63f11cebed3ec5739"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+            override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -63,13 +62,13 @@ class MainActivity : AppCompatActivity() {
                         Date(updatedAt * 1000)
                     )
                 val temp = main.getString("temp") + "°C"
-                val tempMin = "Min Temp: " + main.getString("temp_min") + "°C"
-                val tempMax = "Max Temp: " + main.getString("temp_max") + "°C"
-                val pressure = main.getString("pressure")
-                val humidity = main.getString("humidity")
+                val tempMin = "Min: " + main.getString("temp_min") + "°C"
+                val tempMax = "Max: " + main.getString("temp_max") + "°C"
+                val pressure = main.getString("pressure") + "hPa"
+                val humidity = main.getString("humidity") + "%"
                 val sunrise: Long = sys.getLong("sunrise")
                 val sunset: Long = sys.getLong("sunset")
-                val windSpeed = wind.getString("speed")
+                val windSpeed = wind.getString("speed") + "km/h"
                 val weatherDescription = weather.getString("description")
                 val address = jsonObj.getString("name") + ", " + sys.getString("country")
 
