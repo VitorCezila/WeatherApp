@@ -1,5 +1,8 @@
 # WeatherApp
- A simple weather app using weather OpenWeatherMap API. 
+
+![](images/weatherIc.png)
+
+ WeatherApp is a weather forecast app, which uses [OpenWeatherMap](https://openweathermap.org/forecast5) API.
 
 # Screenshots
 
@@ -16,3 +19,9 @@ Obtain in real time:
 • Humidity
 
 • Wind speed
+
+# Support
+
+If you've found an error in this sample, please file an issue: [WeatherApp Issues](https://github.com/VitorCezila/WeatherApp/issues)
+
+Patches are encouraged, and may be submitted by forking this project and submitting a pull request through GitHub.
