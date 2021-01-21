@@ -2,7 +2,7 @@
 
 ![](images/weatherIc.png)
 
- WeatherApp is a weather forecast app, which uses [OpenWeatherMap](https://openweathermap.org/forecast5) API.
+ WeatherApp is a weather forecast app, which uses [OpenWeatherMap](https://openweathermap.org/api) API.
 
 # Screenshots
 
