@@ -26,7 +26,7 @@
                 android:id="@+id/searchView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:queryHint="City,Country">
+                android:queryHint="Enter your city...">
 
             </SearchView>
 
@@ -362,7 +362,7 @@
     <TextView
         android:id="@+id/errortext"
         android:layout_centerInParent="true"
-        android:text="Something went wrong"
+        android:text="Swipe down to update"
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

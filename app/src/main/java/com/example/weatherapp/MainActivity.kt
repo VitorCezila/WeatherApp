@@ -16,15 +16,37 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    val CITY: String = "são paulo,br"
+    var CITY: String = "new york"
     val API: String = "7c721ab3de8e74a63f11cebed3ec5739"
 
-            override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        weatherTask().execute()
+
+        val searchView = findViewById<SearchView>(R.id.searchView)
+
+        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                //change CITY
+                searchForWeather(query.toString())
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+
+        })
+
+        searchForWeather(CITY)
     }
+
+    private fun searchForWeather(location: String) {
+        weatherTask().execute()
+        CITY = location
+    }
+
 
     inner class weatherTask() : AsyncTask<String, Void, String>() {
         override fun onPreExecute() {
@@ -95,8 +117,8 @@ class MainActivity : AppCompatActivity() {
             catch (e: Exception) {
                 findViewById<ProgressBar>(R.id.loader).visibility = View.GONE
                 findViewById<TextView>(R.id.errortext).visibility = View.VISIBLE
+                Toast.makeText(applicationContext, "There was an error fetching weather, " + "try again.", Toast.LENGTH_SHORT).show()
             }
         }
     }
 }
-
