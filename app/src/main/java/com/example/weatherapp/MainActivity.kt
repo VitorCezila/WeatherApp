@@ -40,8 +40,6 @@ class MainActivity : AppCompatActivity() {
         })
 
         searchForWeather(CITY)
-<<<<<<< Updated upstream
-=======
 
         //when user refresh
         swipeToRefresh.setOnRefreshListener {
@@ -56,7 +54,6 @@ class MainActivity : AppCompatActivity() {
                 swipeToRefresh.isRefreshing = false
             }
         }
->>>>>>> Stashed changes
     }
 
     private fun searchForWeather(location: String) {
@@ -132,11 +129,8 @@ class MainActivity : AppCompatActivity() {
             catch (e: Exception) {
                 findViewById<ProgressBar>(R.id.loader).visibility = View.GONE
                 findViewById<TextView>(R.id.errortext).visibility = View.VISIBLE
-<<<<<<< Updated upstream
                 Toast.makeText(applicationContext, "There was an error fetching weather, " + "try again.", Toast.LENGTH_SHORT).show()
-=======
                 Toast.makeText(applicationContext, "Swipe Down to Update ", Toast.LENGTH_SHORT).show()
->>>>>>> Stashed changes
             }
         }
     }
