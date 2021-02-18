@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">WeatherApp</string>
-    <string name="errorMessage">Location not found. Please try again.</string>
+    <string name="errorMessage">Something wrong, swipe down to refresh.</string>
 </resources>
