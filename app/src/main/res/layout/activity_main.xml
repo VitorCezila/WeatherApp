@@ -371,11 +371,8 @@
     <TextView
         android:id="@+id/errortext"
         android:layout_centerInParent="true"
-<<<<<<< Updated upstream
         android:text="Swipe down to update"
-=======
         android:text="@string/errorMessage"
->>>>>>> Stashed changes
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
