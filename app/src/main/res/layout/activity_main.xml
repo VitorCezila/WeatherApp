@@ -9,6 +9,11 @@
     android:padding="25dp"
     tools:context=".MainActivity">
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <RelativeLayout
         android:id="@+id/mainContainer"
         android:layout_width="match_parent"
@@ -34,6 +39,7 @@
                 android:id="@+id/adress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="Location"
                 android:textSize="24sp"/>
 
@@ -351,6 +357,9 @@
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 
     <ProgressBar
         android:id="@+id/loader"
@@ -362,7 +371,11 @@
     <TextView
         android:id="@+id/errortext"
         android:layout_centerInParent="true"
+<<<<<<< Updated upstream
         android:text="Swipe down to update"
+=======
+        android:text="@string/errorMessage"
+>>>>>>> Stashed changes
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

@@ -40,6 +40,23 @@ class MainActivity : AppCompatActivity() {
         })
 
         searchForWeather(CITY)
+<<<<<<< Updated upstream
+=======
+
+        //when user refresh
+        swipeToRefresh.setOnRefreshListener {
+            if(errortext.visibility == View.VISIBLE) {
+                searchForWeather("São Paulo")
+                Toast.makeText(applicationContext, "São Paulo was set as the default in cases of error", Toast.LENGTH_SHORT).show()
+                swipeToRefresh.isRefreshing = false
+                searchView.setQuery("", false)
+                searchView.clearFocus()
+            } else {
+                searchForWeather(CITY)
+                swipeToRefresh.isRefreshing = false
+            }
+        }
+>>>>>>> Stashed changes
     }
 
     private fun searchForWeather(location: String) {
@@ -79,10 +96,8 @@ class MainActivity : AppCompatActivity() {
                 val wind = jsonObj.getJSONObject("wind")
                 val weather = jsonObj.getJSONArray("weather").getJSONObject(0)
                 val updatedAt: Long = jsonObj.getLong("dt")
-                val updatedAtText =
-                    "Updated at: " + SimpleDateFormat("dd/MM/yyyy hh:mm a", Locale.ENGLISH).format(
-                        Date(updatedAt * 1000)
-                    )
+
+                val updatedAtText = "Updated at: " + SimpleDateFormat("dd/MM/yyyy hh:mm a", Locale.ENGLISH).format(Date(updatedAt * 1000))
                 val temp = main.getString("temp") + "°C"
                 val tempMin = "Min: " + main.getString("temp_min") + "°C"
                 val tempMax = "Max: " + main.getString("temp_max") + "°C"
@@ -90,9 +105,11 @@ class MainActivity : AppCompatActivity() {
                 val humidity = main.getString("humidity") + "%"
                 val sunrise: Long = sys.getLong("sunrise")
                 val sunset: Long = sys.getLong("sunset")
-                val windSpeed = wind.getString("speed") + "km/h"
+                val windSpeed = wind.getString("speed") + "m/s"
                 val weatherDescription = weather.getString("description")
                 val address = jsonObj.getString("name") + ", " + sys.getString("country")
+
+                val weatherDescriptionIcon = weather.getString("icon")
 
                 //populate textViews with data
                 findViewById<TextView>(R.id.adress).text = address
@@ -101,10 +118,8 @@ class MainActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.temp).text = temp
                 findViewById<TextView>(R.id.temp_min).text = tempMin
                 findViewById<TextView>(R.id.temp_max).text = tempMax
-                findViewById<TextView>(R.id.sunrise).text =
-                    SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunrise * 1000))
-                findViewById<TextView>(R.id.sunset).text =
-                    SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunset * 1000))
+                findViewById<TextView>(R.id.sunrise).text = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunrise * 1000))
+                findViewById<TextView>(R.id.sunset).text = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunset * 1000))
                 findViewById<TextView>(R.id.wind).text = windSpeed
                 findViewById<TextView>(R.id.pressure).text = pressure
                 findViewById<TextView>(R.id.humidity).text = humidity
@@ -117,7 +132,11 @@ class MainActivity : AppCompatActivity() {
             catch (e: Exception) {
                 findViewById<ProgressBar>(R.id.loader).visibility = View.GONE
                 findViewById<TextView>(R.id.errortext).visibility = View.VISIBLE
+<<<<<<< Updated upstream
                 Toast.makeText(applicationContext, "There was an error fetching weather, " + "try again.", Toast.LENGTH_SHORT).show()
+=======
+                Toast.makeText(applicationContext, "Swipe Down to Update ", Toast.LENGTH_SHORT).show()
+>>>>>>> Stashed changes
             }
         }
     }
