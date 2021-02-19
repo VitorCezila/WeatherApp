@@ -130,7 +130,6 @@ class MainActivity : AppCompatActivity() {
                 findViewById<ProgressBar>(R.id.loader).visibility = View.GONE
                 findViewById<TextView>(R.id.errortext).visibility = View.VISIBLE
                 Toast.makeText(applicationContext, "There was an error fetching weather, " + "try again.", Toast.LENGTH_SHORT).show()
-                Toast.makeText(applicationContext, "Swipe Down to Update ", Toast.LENGTH_SHORT).show()
             }
         }
     }
