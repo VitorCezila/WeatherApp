@@ -109,7 +109,6 @@ class MainActivity : AppCompatActivity() {
                 val weatherDescriptionIcon = weather.getString("icon")
 
                 //populate textViews with data
-<<<<<<< HEAD
                 findViewById<TextView>(R.id.tv_location).text = addressNew
                 findViewById<TextView>(R.id.tv_updateAt).text = updatedText
                 findViewById<TextView>(R.id.tv_status).text = status.capitalize()
@@ -121,19 +120,6 @@ class MainActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.tv_wind).text = windKm
                 findViewById<TextView>(R.id.tv_pressure).text = pressureMb
                 findViewById<TextView>(R.id.tv_humidity).text = humidityN
-=======
-                findViewById<TextView>(R.id.tv_location).text = address
-                findViewById<TextView>(R.id.tv_updateAt).text = updatedAtText
-                findViewById<TextView>(R.id.tv_status).text = weatherDescription.capitalize()
-                findViewById<TextView>(R.id.tv_temp).text = temp
-                findViewById<TextView>(R.id.tv_min_temp).text = tempMin
-                findViewById<TextView>(R.id.tv_max_temp).text = tempMax
-                findViewById<TextView>(R.id.tv_sunrise).text = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunrise * 1000))
-                findViewById<TextView>(R.id.tv_sunset).text = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunset * 1000))
-                findViewById<TextView>(R.id.tv_wind).text = windSpeed
-                findViewById<TextView>(R.id.tv_pressure).text = pressure
-                findViewById<TextView>(R.id.tv_humidity).text = humidity
->>>>>>> 49b12f087a2ec7e57febab4d2377e7fd1a95677a
 
                 //disabling progressbar and activating mainContainer
                 findViewById<ProgressBar>(R.id.pb_loader).visibility = View.GONE

@@ -11,11 +11,7 @@
         android:id="@+id/coinLogo"
         android:layout_width="80dp"
         android:layout_height="80dp"
-<<<<<<< HEAD
         android:src="@drawable/ic_rain"
-=======
-        android:src="@drawable/ic_suncloud"
->>>>>>> 49b12f087a2ec7e57febab4d2377e7fd1a95677a
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
