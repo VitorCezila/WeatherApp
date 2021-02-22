@@ -6,4 +6,24 @@
     <color name="bg_start">#1E3B70</color>
     <color name="bg_end">#29539B</color>
     <color name="white">#FFF</color>
+    <color name="black">#000</color>
+
+<<<<<<< HEAD
+    <color name="black_font">#000</color>
+    <color name="white_font">#FFF</color>
+    <color name="orange_font">#F79293</color>
+    <color name="items_tint">#F79293</color>
+
+    <color name="bg_header_color">#26293B</color>
+    <color name="bg_items_color">#26293B</color>
+    <color name="bg_app">#1F192D</color>
+=======
+    <color name="black_font">#292929</color>
+    <color name="white_font">#FFF</color>
+    <color name="orange_font">#E26E4C</color>
+
+    <color name="bg_header_color">#E26E4C</color>
+    <color name="bg_items_color">#E26E4C</color>
+    <color name="bg_app">#292929</color>
+>>>>>>> 49b12f087a2ec7e57febab4d2377e7fd1a95677a
 </resources>
