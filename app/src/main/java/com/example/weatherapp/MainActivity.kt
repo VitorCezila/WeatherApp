@@ -22,6 +22,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Hide the status bar.
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        actionBar?.hide()
+
 
         val searchView = findViewById<SearchView>(R.id.searchView)
 
@@ -103,10 +107,10 @@ class MainActivity : AppCompatActivity() {
                 val sunriseN: Long = sys.getLong("sunrise")
                 val sunsetN: Long = sys.getLong("sunset")
                 val windKm = wind.getString("speed") + "m/s"
-                val status = weather.getString("description")
+                val status = weather.getString("main")
                 val addressNew = jsonObj.getString("name") + ", " + sys.getString("country")
 
-                val weatherDescriptionIcon = weather.getString("icon")
+                val statusIcon = weather.getInt("id")
 
                 //populate textViews with data
                 findViewById<TextView>(R.id.tv_location).text = addressNew
@@ -120,6 +124,7 @@ class MainActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.tv_wind).text = windKm
                 findViewById<TextView>(R.id.tv_pressure).text = pressureMb
                 findViewById<TextView>(R.id.tv_humidity).text = humidityN
+                findViewById<ImageView>(R.id.iv_statusImg).setImageResource(CurrentWeatherUtils.getWeatherIconResId(statusIcon))
 
                 //disabling progressbar and activating mainContainer
                 findViewById<ProgressBar>(R.id.pb_loader).visibility = View.GONE
